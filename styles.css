@@ -51,7 +51,7 @@ body{
 .container{
     background-color: rgba(599, 599, 599, 0.60);
     padding: 30px 40px;
-    min-width: 470px;
+    /* min-width: 470px; */
     color:#005555;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389);
     border-radius: 12px;
@@ -112,6 +112,8 @@ body{
     font-weight: bold;
     font-size: 18px;
     cursor:pointer;
+    transition-property:var(width, height);
+    transition-duration: 1s;
 
 }
 
@@ -124,11 +126,7 @@ body{
 
 
 #generate:hover{
-
-    padding: 12px 20px;
-    margin: 20px 0px;
-    font-size: 20px;
-
+    transform: scale(1.2);
 }
 
 #generate:active{
@@ -144,14 +142,79 @@ h2{
 
 h2:hover{
     color: #A1E3D8;
-    font-size: 32px;
+    /* font-size: 32px; */
+    transform: scale(1.2);
     text-shadow: 2px  3px 3px #005555 ;
     cursor: pointer;
-
 }
 
 
+@media screen and (min-width:565px) and (max-width:700px) {
 
-@media screen and (max-width: 646px) {
+    .container{
+        width: 70vw;
+    }
+
+     .input-group{
+        width: 90%; 
+    } 
+
+    input{
+        width: 60%;
+    }
+
+    #result{
+   
+        font-size: 150%;
     
+    } 
+    
+}
+
+@media screen and (max-width: 564px) {
+
+    .container{
+        width: 70vw;
+        height: 70vh;
+
+      }
+
+  h2{
+    text-align: center;
+  }
+
+  h2:hover{
+    display: none;
+  }
+  
+  .input-group{
+    display: flex;
+    flex-direction: column;
+  }
+
+input{
+  width: 90%;
+}
+
+#result{
+   
+    font-size: 150%;
+
+}  
+    
+}
+
+@media screen and (max-width: 375px) {
+
+
+    .container{
+        width: 70vw;
+        height: 90vh;
+
+      }
+
+      #result{
+        font-size:100%;
+      }
+
 }
